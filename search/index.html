@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 搜索 -  雲`bolg</title>
+		<title> 站内搜索 -  雲`bolg</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -359,90 +359,47 @@
 			<img
 				data-src="/images/--ezgif.com-video-to-gif-converter.gif"
 				data-sizes="auto"
-				alt="搜索"
+				alt="站内搜索"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>搜索</h1>
+			<h1>站内搜索</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2024年03月05日</a>
-			<a><i class="kirafont icon-edit-fill"></i>365 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年12月06日</a>
+			<a><i class="kirafont icon-edit-fill"></i>298 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分钟</a>
 		</div>
-		<!-- 搜索框容器 --><html><head></head><body><div class="search-page-container">
+		<!-- 告诉 Hexo 不要渲染下面的 HTML 代码 --><html><head></head><body><div class="search-page-container">
     <div class="search-input-wrapper">
-        <input type="text" id="local-search-input" placeholder="输入关键词，按回车搜索...">
-        <i class="fa fa-search"></i>
+        <input type="text" id="local-search-input" placeholder="输入关键词，回车搜索...">
     </div>
-    <!-- 搜索结果显示区域 -->
-    <div id="local-search-result" class="local-search-result-cls"></div>
+    <div id="local-search-result"></div>
 </div>
 
-<!-- 简单的样式 -->
 <style>
-.search-page-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.search-input-wrapper {
-    position: relative;
-    margin-bottom: 30px;
-}
+/* 简单的搜索框样式 */
+.search-page-container { margin-top: 20px; }
 #local-search-input {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
     outline: none;
-    transition: all 0.3s;
 }
-#local-search-input:focus {
-    border-color: #49b1f5;
-    box-shadow: 0 0 5px rgba(73, 177, 245, 0.5);
-}
-.search-input-wrapper i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-}
-.local-search-result-cls .search-result-list {
-    list-style: none;
-    padding: 0;
-}
-.local-search-result-cls .search-result-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-.local-search-result-cls .search-result-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
-.local-search-result-cls .search-keyword {
-    color: #f00;
-    font-weight: bold;
-}
-.local-search-result-cls p.search-result {
-    font-size: 14px;
-    color: #666;
-    margin-top: 5px;
-    line-height: 1.6;
-    max-height: 100px;
-    overflow: hidden;
-}
+#local-search-input:focus { border-color: #66ccff; }
+.search-result-list { list-style: none; padding: 0; }
+.search-result-list li { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.search-result-title { font-size: 1.2em; font-weight: bold; color: #333; text-decoration: none; }
+.search-keyword { color: #f56c6c; font-weight: bold; }
+.search-result { font-size: 14px; color: #666; margin-top: 5px; }
 </style>
 
-<!-- 核心搜索逻辑脚本 -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+// 搜索逻辑
 var searchFunc = function(path, search_id, content_id) {
-    'use strict';
     $.ajax({
         url: path,
         dataType: "xml",
@@ -456,13 +413,13 @@ var searchFunc = function(path, search_id, content_id) {
             }).get();
             var $input = document.getElementById(search_id);
             var $resultContent = document.getElementById(content_id);
+
             $input.addEventListener('input', function(){
-                var str='<ul class=\"search-result-list\">';
+                var str = '<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
-                    return;
-                }
+                if (this.value.trim().length <= 0) return;
+
                 datas.forEach(function(data) {
                     var isMatch = true;
                     var content_index = [];
@@ -479,30 +436,20 @@ var searchFunc = function(path, search_id, content_id) {
                             if( index_title < 0 && index_content < 0 ){
                                 isMatch = false;
                             } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
+                                if (index_content < 0) index_content = 0;
+                                if (i == 0) first_occur = index_content;
                             }
                         });
                     }
                     if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data.title +"</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
                             var start = first_occur - 20;
                             var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 100;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
+                            if(start < 0) start = 0;
+                            if(start == 0) end = 100;
+                            if(end > content.length) end = content.length;
                             var match_content = content.substr(start, end);
                             keywords.forEach(function(keyword){
                                 var regS = new RegExp(keyword, "gi");
@@ -519,18 +466,18 @@ var searchFunc = function(path, search_id, content_id) {
         }
     });
 }
-// 调用搜索函数，传入 search.xml 的路径
-var search_path = "/search.xml";
-searchFunc(search_path, 'local-search-input', 'local-search-result');
+// 运行搜索，注意路径
+searchFunc('/search.xml', 'local-search-input', 'local-search-result');
 </script>
+
 <!-- hexo injector body_end start -->
-  <canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;"></canvas>
-  <script src="/js/snow.js"></script>
-<script src="/js/funny-title.js"></script><script src="/js/click-love.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
   <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-<!-- hexo injector body_end end --></body></html>
+
+  <canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;"></canvas>
+  <script src="/js/snow.js"></script>
+<script src="/js/funny-title.js"></script><script src="/js/click-love.js"></script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
