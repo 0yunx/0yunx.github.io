@@ -3,7 +3,8 @@
   <entry>
     <title>Hello</title>
     <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><!-- 1. 这里是文字显示的容器，你可以修改 style 里的 font-size 来调整字号 --><html><head></head><body><div id="binft" style="
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><!-- 1. 这里是文字显示的容器，你可以修改 style 里的 font-size 来调整字号 -->
+</head><body><div id="binft" style="
     width: 100%;
     min-height: 50px;
     display: flex;
