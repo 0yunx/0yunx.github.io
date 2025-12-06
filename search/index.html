@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 文章归档 -  雲`bolg</title>
+		<title> 搜索 -  雲`bolg</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -108,7 +108,7 @@
 		</a>
 		
 		<a
-			class="kira-list-item mdui-ripple true"
+			class="kira-list-item mdui-ripple false"
 			href="/archives/"
 			title="文章归档"
 		>
@@ -296,134 +296,131 @@
 			<div class="kira-content">
 				<div id="kira-top-header"></div>
 				<div class="kira-main-content">
-					<div class="kira-posts">
-    
-        <div class="kira-post">
-            <a href="/posts/4a17b156.html">
-                
-                <div
-                    class="kira-post-cover mdui-ripple"
-                    style="padding-bottom: '56.25%'"
-                >
-                    <img
-                        data-src="/images/--ezgif.com-video-to-gif-converter.gif"
-                        data-sizes="auto"
-                        alt="Hello"
-                        class="lazyload kira-post-cover-image"
-                    />
-                    <h1>Hello</h1>
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
                 </div>
-                
-            </a>
-
-            <div class="kira-post-meta kira-rainbow">
-                <a>
-                    <i class="kirafont icon-calendar-fill"></i>
-                    2025年12月04日
-                </a>
-                <a>
-                    <i class="kirafont icon-edit-fill"></i>
-                    434 字
-                </a>
-                <a>
-                    <i class="kirafont icon-time-circle-fill"></i>大概
-                    2 分钟
-                </a>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
             </div>
-    
-            
-                <article>
-                    <!-- 1. 这里是文字显示的容器，你可以修改 style 里的 font-size 来调整字号 -->
-<div id="binft" style="
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-"></div>
-
-<!-- 2. 这里是音乐播放器 (保留你之前的代码) -->
-<!-- 下面放音乐代码 -->
-<meting-js
-  server="netease"
-  type="song"
-  id="409650851"
-  mode="circulation"
-  autoplay="false"
-  mutex="true"
-  listmaxheight="340px"
-  preload="auto"
-  theme="#ff0000">
-</meting-js>
-
-<!-- 3. 这里是特效脚本 -->
-<script>
-  var binft = function (r) {
-    function t() {
-      return b[Math.floor(Math.random() * b.length)]
-    }  
-    function e() {
-      return String.fromCharCode(94 * Math.random() + 33)
-    }
-    function n(r) {
-      for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
-        var l = document.createElement("span");
-        l.textContent = e(), l.style.color = t(), n.appendChild(l)
-      }
-      return n
-    }
-    function i() {
-      var t = o[c.skillI];
-      c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
-    }
-    /* --- 下面这个 o 数组里的内容就是你要显示的文字，每句用引号包起来，逗号隔开 --- */
-    var l = "",
-    o = [
-        "我欲从灵均，三湘隔辽海。",
-        "大江歌罢掉头东，邃密群科济世穷。",
-        "泾溪石险人兢慎，终岁不闻倾覆人。",
-        "摘花不插发，采柏动盈掬。",
-        "青青陵上柏，磊磊涧中石。",
-        "人生天地间，忽如远行客。",
-        "斗酒相娱乐，聊厚不为薄。",
-        "驱车策驽马，游戏宛与洛。",
-        "洛中何郁郁，冠带自相索。",
-        "长衢罗夹巷，王侯多第宅。",
-        "两宫遥相望，双阙百余尺。",
-        "极宴娱心意，戚戚何所迫？"
-    ].map(function (r) {
-    return r + ""
-    }),
-    a = 2,
-    g = 1,
-    s = 5,
-    d = 75,
-    b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
-    c = {
-      text: "",
-      prefixP: -s,
-      skillI: 0,
-      skillP: 0,
-      direction: "forward",
-      delay: a,
-      step: g
-    };
-    i()
-    };
-    // 开始运行
-    binft(document.getElementById('binft'));
-</script>
-
-<!-- 不要写
-                </article>
-            
         </div>
-        <div class="kira-hr"></div>
-    
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/images/--ezgif.com-video-to-gif-converter.gif"
+				data-sizes="auto"
+				alt="搜索"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>搜索</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年12月06日</a>
+			<a><i class="kirafont icon-edit-fill"></i>0 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分钟</a>
+		</div>
+		<html><head></head><body><!-- hexo injector body_end start -->
+  <canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;"></canvas>
+  <script src="/js/snow.js"></script>
+<script src="/js/funny-title.js"></script><script src="/js/click-love.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<!-- hexo injector body_end end --></body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>雲<br>
+        <strong>本文链接：</strong><a href="https://0yunx.github.io/search/index.html" title="https:&#x2F;&#x2F;0yunx.github.io&#x2F;search&#x2F;index.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;0yunx.github.io&#x2F;search&#x2F;index.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="0yunx/my-blog-comments"
+      data-repo-id="R_kgDOQi3ChA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOQi3ChM4CzakP"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
 </div>
 
 				</div>
@@ -437,12 +434,5 @@
 </div>
 
 		</div>
-	<!-- hexo injector body_end start -->
-  <canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;"></canvas>
-  <script src="/js/snow.js"></script>
-<script src="/js/funny-title.js"></script><script src="/js/click-love.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
