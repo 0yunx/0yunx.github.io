@@ -37,4 +37,104 @@
     
   </entry>
   
+  <entry>
+    <title>Hello</title>
+    <link href="https://0yunx.github.io/posts/4a17b156.html"/>
+    <id>https://0yunx.github.io/posts/4a17b156.html</id>
+    <published>2025-12-04T05:16:39.377Z</published>
+    <updated>2025-12-05T06:53:25.846Z</updated>
+    
+    
+    <summary type="html">&lt;!-- 1. 这里是文字显示的容器，你可以修改 style 里的 font-size 来调整字号 --&gt;
+&lt;div id=&quot;binft&quot; style=&quot;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+&quot;&gt;&lt;/div&gt;
+
+&lt;!-- 2. 这里是音乐播放器 (保留你之前的代码) --&gt;
+&lt;!-- 下面放音乐代码 --&gt;
+&lt;meting-js
+  server=&quot;netease&quot;
+  type=&quot;song&quot;
+  id=&quot;409650851&quot;
+  mode=&quot;circulation&quot;
+  autoplay=&quot;false&quot;
+  mutex=&quot;true&quot;
+  listmaxheight=&quot;340px&quot;
+  preload=&quot;auto&quot;
+  theme=&quot;#ff0000&quot;&gt;
+&lt;/meting-js&gt;
+
+&lt;!-- 3. 这里是特效脚本 --&gt;
+&lt;script&gt;
+  var binft = function (r) {
+    function t() {
+      return b[Math.floor(Math.random() * b.length)]
+    }  
+    function e() {
+      return String.fromCharCode(94 * Math.random() + 33)
+    }
+    function n(r) {
+      for (var n = document.createDocumentFragment(), i = 0; r &gt; i; i++) {
+        var l = document.createElement(&quot;span&quot;);
+        l.textContent = e(), l.style.color = t(), n.appendChild(l)
+      }
+      return n
+    }
+    function i() {
+      var t = o[c.skillI];
+      c.step ? c.step-- : (c.step = g, c.prefixP &lt; l.length ? (c.prefixP &gt;= 0 &amp;&amp; (c.text += l[c.prefixP]), c.prefixP++) : &quot;forward&quot; === c.direction ? c.skillP &lt; t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = &quot;backward&quot;, c.delay = a) : c.skillP &gt; 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = &quot;forward&quot;)), r.textContent = c.text, r.appendChild(n(c.prefixP &lt; l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+    }
+    /* --- 下面这个 o 数组里的内容就是你要显示的文字，每句用引号包起来，逗号隔开 --- */
+    var l = &quot;&quot;,
+    o = [
+        &quot;我欲从灵均，三湘隔辽海。&quot;,
+        &quot;大江歌罢掉头东，邃密群科济世穷。&quot;,
+        &quot;泾溪石险人兢慎，终岁不闻倾覆人。&quot;,
+        &quot;摘花不插发，采柏动盈掬。&quot;,
+        &quot;青青陵上柏，磊磊涧中石。&quot;,
+        &quot;人生天地间，忽如远行客。&quot;,
+        &quot;斗酒相娱乐，聊厚不为薄。&quot;,
+        &quot;驱车策驽马，游戏宛与洛。&quot;,
+        &quot;洛中何郁郁，冠带自相索。&quot;,
+        &quot;长衢罗夹巷，王侯多第宅。&quot;,
+        &quot;两宫遥相望，双阙百余尺。&quot;,
+        &quot;极宴娱心意，戚戚何所迫？&quot;
+    ].map(function (r) {
+    return r + &quot;&quot;
+    }),
+    a = 2,
+    g = 1,
+    s = 5,
+    d = 75,
+    b = [&quot;rgb(110,64,170)&quot;, &quot;rgb(150,61,179)&quot;, &quot;rgb(191,60,175)&quot;, &quot;rgb(228,65,157)&quot;, &quot;rgb(254,75,131)&quot;, &quot;rgb(255,94,99)&quot;, &quot;rgb(255,120,71)&quot;, &quot;rgb(251,150,51)&quot;, &quot;rgb(226,183,47)&quot;, &quot;rgb(198,214,60)&quot;, &quot;rgb(175,240,91)&quot;, &quot;rgb(127,246,88)&quot;, &quot;rgb(82,246,103)&quot;, &quot;rgb(48,239,130)&quot;, &quot;rgb(29,223,163)&quot;, &quot;rgb(26,199,194)&quot;, &quot;rgb(35,171,216)&quot;, &quot;rgb(54,140,225)&quot;, &quot;rgb(76,110,219)&quot;, &quot;rgb(96,84,200)&quot;],
+    c = {
+      text: &quot;&quot;,
+      prefixP: -s,
+      skillI: 0,
+      skillP: 0,
+      direction: &quot;forward&quot;,
+      delay: a,
+      step: g
+    };
+    i()
+    };
+    // 开始运行
+    binft(document.getElementById(&#39;binft&#39;));
+&lt;/script&gt;
+
+&lt;!-- 不要写</summary>
+    
+    
+    
+    
+  </entry>
+  
 </feed>
